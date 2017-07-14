@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://unpkg.com/vue"></script>
+	<link rel="stylesheet" href="index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="index.js"></script>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="app">
+	<button v-on:click='counter++'>Increase</button>
+	<button v-on:click='counter--'>Decrease</button>
+	<!-- shorthand for v-on is @ i.e. @click is the same as v-on:click -->
+
+	<!-- shorthand for v-bind is : instead of v-bind:href it's :href -->
+	<p>Counter: {{ counter }}</p>
+	<p>Result: {{ output }}</p>
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://unpkg.com/vue"></script>
+	<link rel="stylesheet" href="index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="index.js"></script>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="app">
+<!-- v-once renders the data only once and does not change it -->
+<h1 v-once>{{ msg }}</h1>
+<!-- you can use functions to output similar to text -->
+<!-- interpolation only works within html, attributes require v-bind:attributename -->
+	<p>{{ sayHello() }} - <a v-bind:href="link" target="_blank">{{linkName}}</a></p>
+
+	<hr>
+	<!-- output html through vuejs. not 100% safe if you don't know where the html comes from -->
+	<p v-html='fullLink'></p>
+</div>
+	
+</body>
+</html>

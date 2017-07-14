@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://unpkg.com/vue"></script>
+	<link rel="stylesheet" href="index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="index.js"></script>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="app">
+<!-- pass event and variable into vue js, you need to add $event -->
+	<button v-on:click="increaseCounter(2, $event)">Click Me</button>
+	<p>{{ counter }}</p>
+	
+	<!-- this is one way to remove event binding, add another event listener and a dummy function that stops propagation or prevents default -->
+<!-- 	<p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} : {{ y }} <span v-on:mousemove="dummy">Dead Spot</span></p>
+
+<hr> -->
+
+	<!-- same thing. stop is stop propegation, you can also add .prevent as in prevent default, you can even chain them .stop.prevent -->
+	<p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} : {{ y }} <span v-on:mousemove.stop="">Dead Spot</span></p>
+
+<!-- you can do event listeners on anything, even specify keys -->
+	<!-- <input type="text" v-on:keyup="alertMe"> -->
+	<!-- <input type="text" v-on:keyup.space="alertMe"> -->
+	<!-- <input type="text" v-on:keyup.enter.space="alertMe"> -->
+
+	<input type="text" v-on:keyup.enter="alertMe">
+
+</div>
+	
+</body>
+</html>

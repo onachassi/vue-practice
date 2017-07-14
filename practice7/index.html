@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://unpkg.com/vue"></script>
+	<link rel="stylesheet" href="index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="index.js"></script>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="app">
+	<p v-if="show">You can see me!</p>
+	<p v-else>Now you see me!</p>
+	<!-- templates are used to group without using divs -->
+<template v-if="show"> 
+	<h1>Heading in a template</h1>
+	<p>paragraph in a template</p>
+</template>
+
+	<p v-show="!show">Do you also see me?</p>
+	<button @click="show = !show">Button</button>
+</div>
+	
+</body>
+</html>

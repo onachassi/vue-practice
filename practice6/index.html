@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://unpkg.com/vue"></script>
+	<link rel="stylesheet" href="index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="index.js"></script>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="app">
+<!-- onclick set attachRed to the opposite, v-bind class setting it to red, if attachRed == true -->
+	<div class="demo" @click='attachRed = !attachRed' :class="divClasses"></div>
+	<div class="demo" :class="{ red: attachRed }"></div>
+	<!-- <div class="demo" :class='color'></div> -->
+	<div class="demo" :class='[color, { red: !attachRed }, { blue: attachRed }] '></div>
+	<hr>
+	<input type="text" v-model='color'>
+</div>
+	
+</body>
+</html>
